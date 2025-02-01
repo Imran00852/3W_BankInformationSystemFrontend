@@ -28,6 +28,8 @@ const BankDetails = () => {
       toast.success(data.msg);
       setIsAuthenticated(false);
       setUser({});
+      localStorage.removeItem("isAdminAuthenticated"); 
+      localStorage.removeItem("token");
       navigate("/login");
     } catch (err) {
       toast.error(err.response?.data?.msg || "Logout failed!");
