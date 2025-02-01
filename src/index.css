@@ -1,0 +1,104 @@
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+body {
+  background: linear-gradient(-45deg, #6a11cb, #2575fc, #ff6a00, #ee0979);
+  background-size: 400% 400%;
+  animation: gradientAnimation 8s ease infinite;
+  height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Custom CSS */
+@media (max-width: 470px) {
+  .custom-card {
+    width: 100% !important;
+  }
+}
+@media (max-width: 300px) {
+  .btn {
+    /* margin: 10px !important; */
+    height: 40px !important;
+    max-width: 95px !important;
+    padding: 5px 10px !important;
+    font-size: 13px !important;
+    white-space: nowrap;
+  }
+  .txt {
+    font-size: 12px !important;
+  }
+}
+
+/* CSS for the backdrop and modal blur effect */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+  backdrop-filter: blur(5px); /* Applies the blur effect */
+  z-index: 1050; /* Ensures it appears above other content */
+  display: none;
+  transition: opacity 0.3s ease;
+}
+
+.backdrop.show {
+  display: block;
+}
+
+.modal.fade.show {
+  display: block;
+  opacity: 1;
+}
+
+.modal-dialog {
+  z-index: 1060; /* Ensures the modal content is above the backdrop */
+}
+.form-control:focus {
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+/* Loader.css */
+
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.2); /* Semi-transparent background */
+  z-index: 9999;
+}
+
+.spinner {
+  border: 8px solid #f3f3f3; /* Light gray */
+  border-top: 8px solid #3498db; /* Blue color */
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1.5s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
