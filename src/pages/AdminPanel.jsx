@@ -158,7 +158,14 @@ const AdminPanel = () => {
               </div>
               <div className="modal-body">
                 {selectedUser.banks && selectedUser.banks.length > 0 ? (
-                  selectedUser.banks.map((bank, index) => (
+                  [
+                    ...new Map(
+                      selectedUser.banks.map((bank) => [
+                        bank.accountNumber,
+                        bank,
+                      ])
+                    ).values(),
+                  ].map((bank, index) => (
                     <div key={index} className="card mb-3 border-0 shadow-sm">
                       <div className="card-body">
                         <p>
