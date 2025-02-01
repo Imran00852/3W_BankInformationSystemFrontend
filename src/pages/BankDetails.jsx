@@ -40,11 +40,11 @@ const BankDetails = () => {
     axios
       .get(`${server}/bank-accounts/${id}`, { withCredentials: true })
       .then((res) => {
-        setBank(res.data.banks || []);
+        setBank(res.data.banks);
         setLoading(false);
       })
       .catch((err) => {
-        toast.error(err.response?.data?.msg);
+        //toast.error(err.response?.data?.msg);
         setLoading(false);
       });
   }, [id]);
